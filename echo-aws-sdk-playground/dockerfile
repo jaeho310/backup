@@ -1,0 +1,12 @@
+# Dockerfile
+FROM golang:latest
+
+ADD ./ /temp/
+
+WORKDIR /temp
+
+RUN go get
+
+RUN go build -o myApp main.go
+
+CMD "./myApp"
